@@ -1,0 +1,86 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Drawing;
+
+public partial class ShowWayPoints : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!Page.IsPostBack)
+        {
+            string strPt = Request.QueryString["strtPt"];
+            string endPt = Request.QueryString["endPt"];
+            string imPt1 = Request.QueryString["imPt1"];
+            string imPt2 = Request.QueryString["imPt2"];
+            string imPt3 = Request.QueryString["imPt3"];
+            string imPt4 = Request.QueryString["imPt4"];
+            string imPt5 = Request.QueryString["imPt5"];
+            string imPt6 = Request.QueryString["imPt6"];
+            string imPt7 = Request.QueryString["imPt7"];
+            string imPt8 = Request.QueryString["imPt8"];
+            string imPt9 = Request.QueryString["imPt9"];
+            string imPt10 = Request.QueryString["imPt10"];
+
+            CreateWayPointText(strPt + "==>");
+
+            if (imPt1!= null ||imPt1!= string.Empty  )
+            {
+                CreateWayPointText(imPt1+"==>");
+
+            }
+            if ( imPt2 != string.Empty)
+            {
+                CreateWayPointText(imPt2 + "==>");
+
+            }
+            if ( imPt3 != string.Empty)
+            {
+                CreateWayPointText(imPt3 + "==>");
+            }
+            if (imPt4 != string.Empty)
+            {
+                CreateWayPointText(imPt4 + "==>");
+
+            }
+            if (imPt5 != string.Empty)
+            {
+                CreateWayPointText(imPt5 + "==>");
+
+            }
+            if ( imPt6 != string.Empty)
+            {
+                CreateWayPointText(imPt6 + "==>");
+            }
+            if ( imPt7 != string.Empty)
+            {
+                CreateWayPointText(imPt7 + "==>");
+            }
+            if ( imPt8 != string.Empty)
+            {
+                CreateWayPointText(imPt8 + "==>");
+
+            }
+            if ( imPt9 != string.Empty)
+            {
+                CreateWayPointText(imPt9 + "==>");
+
+            }
+            if (imPt10 != string.Empty)
+            {
+                CreateWayPointText(imPt10 );
+            }
+            CreateWayPointText(endPt);
+        }
+
+    }
+    public void CreateWayPointText(string wayPt)
+    {
+        lblWayPoints.Text =lblWayPoints.Text+ wayPt;
+        
+       
+    }
+}

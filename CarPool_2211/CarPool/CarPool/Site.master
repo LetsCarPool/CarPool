@@ -1,0 +1,74 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" EnableTheming="true" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div style="background-color: #7CEAE6">
+            <div>
+  <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Images/HomeImg.png" Height="70px" Width="960px"                 
+                    />
+            </div>
+            <div style="background-image:url('Images/login.png');  width:960px; margin-top:0px; height:20px; background-repeat:no-repeat" >
+            <table >
+            <tr>
+            <td align="right" style="width:960px; height:20px; ">
+                <asp:Label ID="lblWelcome" runat="server" Text="Welcome " Visible="False" 
+                    Font-Bold="True" ForeColor="White" ></asp:Label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:LinkButton ID="lnkLogin" runat="server" onclick="lnkLogin_Click" 
+                    CausesValidation="False" Font-Bold="True" ForeColor="White" >Log In</asp:LinkButton>
+                    </td>
+<%-- Modlog Start: Seema                   <br />
+                   
+                   <asp:LinkButton ID="lnkUserAccount" runat="server" 
+                    CausesValidation="False" Font-Bold="True" onclick="lnkUserAccount_Click" 
+                    Visible="False" >UserAccount</asp:LinkButton>  Modlog End: Seema--%>
+                    </tr>
+            </table>   
+            </div>
+            <div class="clear hideSkiplink" >
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                    <%--Modlock:24-10-2013:Swati:Removed Homepage redirection
+                        <asp:MenuItem NavigateUrl="~/LoginPage.aspx" Text="Home"/>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>   --%>                   
+                    </Items>
+                </asp:Menu>
+            
+            </div>
+        </div>
+       
+       <%--Modlog Seema: 19-11--%>
+        <div id="SitemapDiv" runat="server" style="background-image:url('Images/login.png');  width:960px; margin-top:0px; height:20px; background-repeat:no-repeat">
+        <table><tr>
+        <td>
+        &nbsp;
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+            </asp:SiteMapPath>
+            </td>
+            </tr>
+        </table>
+        </div>
+        <%--Modlog Seema: 19-11--%>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"  />
+        </div>
+        <div class="clear">
+        </div> 
+        <div class="footer" style="color: #FFFFFF">
+        
+        CopyRight Reserved @Infosys</div>
+    </div>
+   
+    </form>
+</body>
+</html>

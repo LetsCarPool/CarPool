@@ -1,0 +1,52 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<%--label small bold--%>
+<asp:Label skinId="skin1" runat="server" Font-Bold="True" Font-Names="Calisto MT" Font-Size="Small" ForeColor="Black" >
+</asp:Label>
+
+<%--label small no bold--%>
+<asp:Label skinId="Skin2" runat="server" Font-Bold="False" Font-Names="Calisto MT" Font-Size="Small" ForeColor="Black" >
+</asp:Label>
+<%--label label medium bold--%>
+<asp:Label skinId="skin3" runat="server" Font-Bold="True" Font-Names="Calisto MT" Font-Size="Medium" ForeColor="Black" >
+</asp:Label>
+
+<%--button--%>
+<asp:Button skinId="skin1"  runat="server" BackColor="#E5E5E5" Font-Bold="True" 
+                                Font-Names="Calisto MT" Font-Size="Small" ForeColor="Black" 
+                                Width="83px" />
+ <%--button with diff size--%>
+<asp:Button skinId="skin2"  runat="server" BackColor="#E5E5E5" Font-Bold="True" 
+                                Font-Names="Calisto MT" Font-Size="Small" ForeColor="Black"  Width="125px" />
+<%--Text box--%>
+<asp:TextBox runat="server"  Width="125px"></asp:TextBox>
+<%--panel--%>
+<asp:Panel  runat="server" Height="230px" style="margin-left: 0px" 
+                BackColor="#A4A4C1"> 
+            </asp:Panel>
+<%--RequiredFieldValidator--%>
+<asp:RequiredFieldValidator  runat="server" Font-Size="Large" ForeColor="Red" ></asp:RequiredFieldValidator>
+
+
+<%--RegularExpressionValidator--%>
+<asp:RegularExpressionValidator  runat="server" Font-Size="Large" ForeColor="Red"> </asp:RegularExpressionValidator>
+
+<%--CompareValidator--%>
+
+<asp:CompareValidator runat="server" Font-Size="Large" ForeColor="Red"></asp:CompareValidator>
+
+<asp:DropDownList SkinId="Skin1"  runat="server" Width="80px">
+                    </asp:DropDownList>

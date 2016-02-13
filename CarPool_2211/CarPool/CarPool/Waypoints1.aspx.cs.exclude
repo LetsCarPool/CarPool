@@ -1,0 +1,51 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+public partial class Waypoints1 : System.Web.UI.Page
+{
+    static int owner;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!Page.IsPostBack)
+        {
+            DataAccessLayer DALayer = new DataAccessLayer();
+           
+            try
+            {
+                string userId =Convert.ToString( Session["userid"]);
+
+                if (userId != null || userId ==string.Empty )
+                {
+                    lnkLogin.Text = "Log Out";
+                    lblWelcome.Visible = true;
+                    lblWelcome.Text += userId;
+                }
+                owner = DALayer.getEmpId(userId);
+                ddlCarInfo.DataSource = DALayer.ReadRegisteredCars(owner);
+                Page.DataBind();
+            }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "myscript", "alert('Some error occured');", true);
+                return;
+            }
+        }
+
+    }
+    protected void lnkLogin_Click(object sender, EventArgs e)
+    {
+        if (lnkLogin.Text == "Log Out")
+        {
+
+            Session["userid"] = null;
+            Response.Redirect("~/HomePage.aspx");
+        }
+        else
+        {
+            Response.Redirect("~/LoginPage.aspx");
+        }
+    }
+}
